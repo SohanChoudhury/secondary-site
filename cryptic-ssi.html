@@ -5,17 +5,17 @@
 
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>GSS — Sohan</title>
-<link rel="alternate" hreflang="en-us" href="genomic-sequence-searcher.html">
+  <title>CSSI — Sohan</title>
+<link rel="alternate" hreflang="en-us" href="cryptic-ssi.html">
 
 
 <meta name="description" content="For my first project as a research intern at the Yale School of Medicine Department of Hematology, I developed a program to parse genomic data.">
-<link rel="canonical" href="genomic-sequence-searcher.html">
+<link rel="canonical" href="cryptic-ssi.html">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GSS — Sohan">
+<meta property="og:title" content="CSSI — Sohan">
 <meta property="og:description" content="For my first project as a research intern at the Yale School of Medicine Department of Hematology, I developed a program to parse genomic data.">
-<meta property="og:url" content="genomic-sequence-searcher.html">
+<meta property="og:url" content="cryptic-ssi.html">
 <meta property="og:site_name" content="Sohan Choudhury">
 
 
@@ -64,7 +64,7 @@ var wpcf7 = {"apiSettings":{"root":"http:\/\/www.sohanchoudhury.com\/wp-json\/co
 
 <body class="case-history-template-default single single-case-history postid-369 liquidprice">
     <div id="barba-wrapper">
-                  <div class="wrapper" style="background-color: rgb(234, 222, 249);">
+                  <div class="wrapper" style="background-color: rgb(204, 219, 255);">
             <header class="c-header">
   <div class="c-header__wrap c-container">
     <a class="c-header__item c-brand-logo" href="index.html">
@@ -72,7 +72,7 @@ var wpcf7 = {"apiSettings":{"root":"http:\/\/www.sohanchoudhury.com\/wp-json\/co
     <nav class="c-header__item">
               <ul id="menu-primary-menu" class="c-nav">
 
-<li class="menu-item menu-resume"><a href="genomic-sequence-searcher.html">Resumé</a></li>  <!-- add target="_blank" before href to open new tab -->
+<li class="menu-item menu-resume"><a href="cryptic-ssi.html">Resumé</a></li>  <!-- add target="_blank" before href to open new tab -->
 <li class="js-toggle-contact menu-item menu-get-in-touch"><a>Get in touch</a></li>
 
 
@@ -81,12 +81,12 @@ var wpcf7 = {"apiSettings":{"root":"http:\/\/www.sohanchoudhury.com\/wp-json\/co
   </div>
 </header>
 
-<section class="o-block c-hero js-bg-color " data-color="#EADEF9">
+<section class="o-block c-hero js-bg-color " data-color="#CCDBFF">
     <div class="o-block__wrap c-hero__wrap c-container">
       <div class="o-block__item c-hero__item">
-        <h1 class="js-animation-item h1-internal">Genomic Sequence Searcher</h1>
+        <h1 class="js-animation-item h1-internal">Cryptic Splice Site Identifier</h1>
         <div class="c-hero__content c-shifted">
-                      <p>For my first project as a research intern at the Yale School of Medicine Department of Hematology, I developed a program to parse genomic data.</p>
+                      <p>For my the main project of my research internship at the Yale School of Medicine, I developed a program to identify novel cryptic splice sites in patient genomes.</p>
 
 
                       <a class="c-cta c-cta--primary js-primary-cta u-margin-top-32 js-animation-item">Discover more</a>
@@ -111,8 +111,8 @@ var wpcf7 = {"apiSettings":{"root":"http:\/\/www.sohanchoudhury.com\/wp-json\/co
                           </ul>
           </div>
               </div>
-      <div class="c-text-block c-shifted"><p>The summer preceding my senior year of high school, I spent 10 weeks at Yale working under Dr. Manoj M. Pillai and in conjunction with bioinformatician Dr. Anil Kesarwani.</p>
-<p>As this was my preliminary experience in computer science, my goal was to gain relevant knowledge of the field of computational biology as well as with coding in Python.</p>
+      <div class="c-text-block c-shifted"><p>Having completed the <a href="genomic-sequence-searcher.html">Genomic Sequence Searcher</a>, I moved on to this more challenging project that directly adressed the research focus of the Pillai Lab.</p>
+<p>This program took me approximately 8 weeks to complete. The purpose of it was to recognize impacts of a mutated SF3B1 protein on alternative splicing.</p>
 </div>
     </div>
   </div>
@@ -144,19 +144,33 @@ var wpcf7 = {"apiSettings":{"root":"http:\/\/www.sohanchoudhury.com\/wp-json\/co
   <div class="o-block__wrap c-block__wrap c-container has-no-height">
     <div class="o-block__item c-block__item">
       <div class="c-text-block c-shifted js-animation-item" style="opacity: 1;">
-       <p>I subsequently developed the <strong>Genomic Sequence Searcher</strong>. The program accurately converts <code>FASTA</code> genome sequences and <code>BED</code> queries into a new <code>FASTA</code> file.</p>
+       <p>Given a <code>GTF</code> or <code>GFF3</code> annotation file as well as a <code>STAR</code> documentation containing splice junctions, the <strong>Cryptic Splice Site Identifier</strong> will find all non-canonical splice sites.</p>
+
 
 <p>Notable features:</p>
 
+
 <ul>
-  <li>Conversion of sequence to RNA</li>
+  <li>Ability to use multiple <code>.tab</code> files
+    <ul>
+    <li><small>Option to input a <code>.txt</code> file containing paths of an unlimited number of <code>.tab</code> files</small></li>
+    </ul>
+  </li>
   <li><code>parser</code> style user input</li>
-  <li>Optional console output</li>
+  <li>Versatile output file
+    <ul>
+      <li><small>Contains both cryptic splice junction and nearest annotated case</small></li>
+      <li><small>Provides distance of novel case from canonical case, as well as directionality</small></li>
+      <li><small>Tab delimited and contains number of uniquely mapped reads</small></li>
+    </ul>
+  </li>
 </ul>
 
-<p>Throughout development, I consulted with the research group to better understand their needs. I also presented progress during weekly group meetings.</p>
+<p>The processing is very robust, as it works for 3', 5', or when both splice sites are cryptic.</p>
 
-<p>My program was used in the group's research efforts to aid in down-stream analysis, and prepared me to take on a more challenging project — the <a href="genomic-sequence-searcher.html">Cryptic Splice Site Identifier</a>.</p>
+<p>This program was used by bioinformaticians at the lab to help direct research efforts by identifying statistically significant cases of cryptic splicing.</p>
+
+<p>With this final project at the lab, I solidified my understanding of the field and my interest in Computer Science, amazed by the potential of such technologies.</p>
 
 
 
